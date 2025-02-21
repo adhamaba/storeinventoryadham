@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Store Inventory</title>
+  <!-- You can add your CSS files here -->
 </head>
 <body>
-$END$
+<!-- Include a header fragment if you have one -->
+<h1>Store Inventory</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Store Names</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="store : ${stores}">
+    <td th:text="${store.storeName}"></td>
+  </tr>
+  </tbody>
+</table>
+<!-- Include a footer fragment if you have one -->
 </body>
 </html>

@@ -1,0 +1,13 @@
+CREATE TABLE STORE (
+                       STORE_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+                       STORE_NAME VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE PRODUCT (
+                         PRODUCT_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+                         PRODUCT_NAME VARCHAR(255) UNIQUE NOT NULL,
+                         PRODUCT_PRICE DOUBLE PRECISION,
+                         PRODUCT_QUANTITY INTEGER,
+                         STORE_ID BIGINT,
+                         FOREIGN KEY (STORE_ID) REFERENCES STORE(STORE_ID)
+);
